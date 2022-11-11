@@ -6,7 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/tvOutputTextDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="250"
+        android:textSize="34dp"
+        android:padding="5dp"
+        android:gravity="right"
+        android:layout_above="@+id/tvInputTextDisplay"
+        />
+
+    <TextView
+        android:id="@+id/tvInputTextDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="250"
+        android:textSize="70dp"
+        android:padding="5dp"
+        android:gravity="right"
+        android:layout_above="@+id/llFunctionality"
+        />
+
     <LinearLayout
+        android:id="@+id/llFunctionality"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
