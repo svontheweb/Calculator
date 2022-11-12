@@ -14,10 +14,10 @@
 
         android:text=""
 
-        android:textSize="34dp"
+        android:textSize="38dp"
         android:padding="5dp"
-        android:gravity="right"
-        android:layout_above="@+id/tvInputTextDisplay"
+        android:gravity="bottom|right"
+        android:layout_above="@+id/tvOutputTextDisplay"
         />
 
     <TextView
@@ -27,7 +27,7 @@
 
         android:text=""
 
-        android:textSize="70dp"
+        android:textSize="80dp"
         android:padding="5dp"
         android:gravity="right"
         android:layout_above="@+id/llFunctionality"

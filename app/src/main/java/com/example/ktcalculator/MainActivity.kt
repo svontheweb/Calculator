@@ -3,6 +3,7 @@ package com.example.ktcalculator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ktcalculator.databinding.ActivityMainBinding
+import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -105,11 +106,25 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnEqual.setOnClickListener() {
             // do not show EQUAL SIGN insted calculate on click
-        // binding.tvInputTextDisplay.append("=")
+            // binding.tvInputTextDisplay.append("=")
 
+            // TO EVALUATE using ExpressionBuilder().build()
+            //you need to import dependency
+            // by adding a line in "build gradle(app>Gradle Scripts> build.gradle(Module:app)"  in 'dependencies{ }'
+            // implementation 'net.objecthunter:exp4j:0.4.8'
+
+            val text = binding.tvInputTextDisplay.text.toString()
+            val expression = ExpressionBuilder(text).build()
+            val result = expression.evaluate()
+            val longresult = result.toLong()
+
+            if (result == longresult.toDouble()) {
+                binding.tvOutputTextDisplay.text = longresult.toString()
+            }
+            else {
+                binding.tvOutputTextDisplay.text = result.toString()
+            }
 
         }
-
-
     }
 }
